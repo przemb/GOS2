@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PDollarGestureRecognizer;
 
 public class GestureController : MonoBehaviour {
 
     public Button startButton;
     public Text textField;
     public GesturesScript gestureScript;
+    public AutomaticDrawer automaticDrawer;
 
 	// Use this for initialization
 	void Start () {
@@ -30,8 +32,21 @@ public class GestureController : MonoBehaviour {
 
     void giveDrawingTask()
     {
-        string randomGesture = gestureScript.getRandomGesture();
-        textField.text = randomGesture;
-        gestureScript.askForGesture(randomGesture);
+        Gesture randomGesture = gestureScript.getRandomGesture();
+        textField.text = randomGesture.Name;
+        gestureScript.askForGesture(randomGesture.Name);
+
+        automaticDrawer.startMove(Instantiate(gestureScript.trailPrefab), scalePoints(randomGesture.Points));
+    }
+
+    Point[] scalePoints(Point[] points)
+    {
+        Point[] newPoints = points;
+        foreach(Point p in newPoints)
+        {
+            p.X *= 5;
+            p.Y *= 5;
+        }
+        return newPoints;
     }
 }

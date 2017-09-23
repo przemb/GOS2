@@ -212,12 +212,12 @@ public class GesturesScript : MonoBehaviour {
         return new Gesture(points.ToArray(), gestureName);
     }
 
-    public string getRandomGesture()
+    public Gesture getRandomGesture()
     {
         List<string> keyList = new List<string>(templateGestures.Keys);
 
         Random rand = new Random();
-        string randomKey = keyList[Random.Range(0, keyList.Count)];
+        Gesture randomKey = templateGestures[keyList[Random.Range(0, keyList.Count)]];
         return randomKey;
     }
 }
