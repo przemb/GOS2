@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Gesture Name = "straight_line">
+	<Stroke>
+		<Point X = "334" Y = "278" T = "0" Pressure = "0" />
+		<Point X = "336" Y = "278" T = "0" Pressure = "0" />
+		<Point X = "340" Y = "278" T = "0" Pressure = "0" />
+		<Point X = "343" Y = "278" T = "0" Pressure = "0" />
+		<Point X = "348" Y = "278" T = "0" Pressure = "0" />
+		<Point X = "354" Y = "277" T = "0" Pressure = "0" />
+		<Point X = "365" Y = "275" T = "0" Pressure = "0" />
+		<Point X = "376" Y = "274" T = "0" Pressure = "0" />
+		<Point X = "389" Y = "271" T = "0" Pressure = "0" />
+		<Point X = "400" Y = "270" T = "0" Pressure = "0" />
+		<Point X = "411" Y = "269" T = "0" Pressure = "0" />
+		<Point X = "418" Y = "268" T = "0" Pressure = "0" />
+		<Point X = "422" Y = "268" T = "0" Pressure = "0" />
+		<Point X = "424" Y = "267" T = "0" Pressure = "0" />
+		<Point X = "426" Y = "267" T = "0" Pressure = "0" />
+		<Point X = "427" Y = "267" T = "0" Pressure = "0" />
+		<Point X = "429" Y = "267" T = "0" Pressure = "0" />
+		<Point X = "431" Y = "267" T = "0" Pressure = "0" />
+	</Stroke>
+</Gesture>
