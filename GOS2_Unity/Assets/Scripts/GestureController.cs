@@ -41,7 +41,11 @@ public class GestureController : MonoBehaviour {
 
     Point[] scalePoints(Point[] points)
     {
-        Point[] newPoints = points;
+        Point[] newPoints = new Point[points.Length];
+        for(int i = 0; i < points.Length; i++)
+        {
+            newPoints[i] = new Point(points[i].X, points[i].Y, 1);
+        }
         foreach(Point p in newPoints)
         {
             p.X *= 5;
