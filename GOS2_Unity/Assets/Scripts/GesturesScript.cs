@@ -155,7 +155,7 @@ public class GesturesScript : MonoBehaviour {
     bool classifyDrawnShape(Gesture candidate)
     {
         StringFloatPair classificationResult = PointCloudRecognizer.Classify(candidate, trainingGestures.ToArray());
-        if (classificationResult.f > 0) //to be set experimentally
+        if (classificationResult.f < 0.2) //to be set experimentally
         {
             return wantedGesture == classificationResult.s;
         }

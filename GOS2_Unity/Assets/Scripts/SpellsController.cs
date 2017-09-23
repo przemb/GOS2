@@ -20,7 +20,7 @@ public class SpellsController : MonoBehaviour {
     {
         switch(gesture)
         {
-            case "line":
+            case "straight line":
                 explosion(5);
                 break;
         }
@@ -41,8 +41,8 @@ public class SpellsController : MonoBehaviour {
 
     private Vector3 getRandomWorldPosition()
     {
-        float randomX = Random.Range(0, 1);
-        float randomY = Random.Range(0, 1);
+        float randomX = Random.Range(0, 1f);
+        float randomY = Random.Range(0, 1f);
 
         return Camera.main.ViewportToWorldPoint(new Vector3(randomX, randomY, 0));
     }

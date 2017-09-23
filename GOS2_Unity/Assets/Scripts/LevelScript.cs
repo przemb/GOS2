@@ -34,6 +34,7 @@ public class LevelScript : MonoBehaviour {
         if (gestureController.hasSucceeded())
         {
             finishedLesson = true;
+            lessonNumber++;
         }
         if (gestureController.hasFailed())
         {
@@ -45,9 +46,9 @@ public class LevelScript : MonoBehaviour {
     {
         finishedLesson = false;
         //play some sounds
-        gestureController.giveDrawingTask("straight_line");
+        gestureController.giveDrawingTask("straight line");
         wizard.GetComponent<Animator>().SetTrigger("startAttack");
-        gestureController.showGesture("straight_line");
+        gestureController.showGesture("straight line");
     }
 
     private void secondSpellLesson()
@@ -55,6 +56,7 @@ public class LevelScript : MonoBehaviour {
         finishedLesson = false;
         //play some sounds
         gestureController.giveDrawingTask("l");
+        wizard.GetComponent<Animator>().SetTrigger("startAttack");
         gestureController.showGesture("l");
     }
 }
