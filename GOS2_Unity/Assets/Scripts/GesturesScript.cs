@@ -9,14 +9,34 @@ public class GesturesScript : MonoBehaviour {
 
     public GameObject trailPrefab;
 
+    public string wantedGesture;
+
     private GameObject trail;
 
+    private bool allowDrawing = false;
+
+    public enum DrawingState
+    {
+        notDrawing,
+        drawing,
+        failedDrawing,
+        succededDrawing
+    }
+
+    private DrawingState drawingState = DrawingState.notDrawing;
+
+    Dictionary<string, Gesture> templateGestures;
+
     List<Gesture> trainingGestures;
+    List<Point> currentTrailPoints;
 
 	// Use this for initialization
 	void Start () {
         trainingGestures = new List<Gesture>();
+        currentTrailPoints = new List<Point>();
+        templateGestures = new Dictionary<string, Gesture>();
         loadGestureTrainingSet();
+        loadTemplateGestures();
 	}
 	
 	// Update is called once per frame
@@ -25,29 +45,103 @@ public class GesturesScript : MonoBehaviour {
         // ------------------------------------------------
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 10;
-            Vector3 position = Camera.main.ScreenToWorldPoint(mousePos);
-           // position.z = 0; // Make sure the trail is visible
-
-            trail = CreateTrail(position);
+            if(allowDrawing)
+            {
+                startDrawing();
+            }
         }
         else if (trail != null && Input.GetMouseButton(0))
         {
-            // Move the trail
-            Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 10;
-            Vector3 position = Camera.main.ScreenToWorldPoint(mousePos);
-            //position.z = 0; // Make sure the trail is visible
-
-            trail.transform.position = position;
+            if(drawingState == DrawingState.drawing)
+            {
+                continueDrawing();
+            }
         }
         else if (trail != null && Input.GetMouseButtonUp(0))
         {
-                // Let the trail fade out
-                Destroy(trail, trail.GetComponent<TrailRenderer>().time);
-                trail = null;
+            if(drawingState == DrawingState.drawing)
+            {
+                finishDrawing();
+            }    
         }
+    }
+
+    private void startDrawing()
+    {
+
+        currentTrailPoints = new List<Point>();
+
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 10;
+        Vector3 position = Camera.main.ScreenToWorldPoint(mousePos);
+
+        trail = CreateTrail(position);
+        savePoint(position.x, position.y);
+
+        drawingState = DrawingState.drawing;
+    }
+
+    private void continueDrawing()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 10;
+        Vector3 position = Camera.main.ScreenToWorldPoint(mousePos);
+     
+        trail.transform.position = position;
+        savePoint(position.x, position.y);
+    }
+
+    private void finishDrawing()
+    {
+        Destroy(trail, trail.GetComponent<TrailRenderer>().time);
+        trail = null;
+
+        if (classifyDrawnShape(new Gesture(currentTrailPoints.ToArray())))
+        {
+            drawingState = DrawingState.succededDrawing;
+        }
+        else
+        {
+            drawingState = DrawingState.failedDrawing;
+        }
+    }
+
+    public void askForGesture(string gesture)
+    {
+        allowDrawing = true;
+        wantedGesture = gesture;
+        drawingState = DrawingState.notDrawing;
+    }
+
+    public DrawingState getDrawingState()
+    {
+        DrawingState currentState = drawingState;
+
+        if (drawingState == DrawingState.succededDrawing)
+        {
+            allowDrawing = false;
+            drawingState = DrawingState.notDrawing;
+        }
+        else if(drawingState == DrawingState.failedDrawing)
+        {
+            drawingState = DrawingState.drawing;
+        }
+
+        return currentState;
+}
+
+    void loadTemplateGestures()
+    {
+        foreach (string filename in Directory.GetFiles(Application.dataPath + "/GestureTraining/Templates", "*.xml"))
+        {
+            Gesture loadedGesture = ReadGesture(filename);
+            templateGestures.Add(loadedGesture.Name, loadedGesture);
+        }
+    }
+
+    void savePoint(float x, float y)
+    {
+        currentTrailPoints.Add(new Point(x, y, 1));
     }
 
     GameObject CreateTrail(Vector3 position)
@@ -58,18 +152,22 @@ public class GesturesScript : MonoBehaviour {
         return trail;
     }
 
+    bool classifyDrawnShape(Gesture candidate)
+    {
+        StringFloatPair classificationResult = PointCloudRecognizer.Classify(candidate, trainingGestures.ToArray());
+        if (classificationResult.f > 0.7) //to be set experimentally
+        {
+            return wantedGesture == classificationResult.s;
+        }
+        else return false;
+    }
+
     void loadGestureTrainingSet()
     {
-        foreach(string filename in getAllFilesFromFolder())
+        foreach(string filename in Directory.GetFiles(Application.dataPath + "/GestureTraining/", "*.xml"))
         {
             trainingGestures.Add(ReadGesture(filename));
         }
-    }
-
-    string[] getAllFilesFromFolder()
-    {
-        string test = Application.dataPath + "/GestureTraining";
-        return Directory.GetFiles(Application.dataPath + "/GestureTraining/", "*.xml");
     }
 
     public static Gesture ReadGesture(string fileName)
@@ -112,5 +210,14 @@ public class GesturesScript : MonoBehaviour {
                 xmlReader.Close();
         }
         return new Gesture(points.ToArray(), gestureName);
+    }
+
+    public string getRandomGesture()
+    {
+        List<string> keyList = new List<string>(templateGestures.Keys);
+
+        Random rand = new Random();
+        string randomKey = keyList[Random.Range(0, keyList.Count)];
+        return randomKey;
     }
 }
