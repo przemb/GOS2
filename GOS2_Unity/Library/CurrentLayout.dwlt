@@ -189,7 +189,11 @@ MonoBehaviour:
   m_MinSize: {x: 711, y: 471}
   m_MaxSize: {x: 18006, y: 14021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 113
+=======
+  controlID: 67
+>>>>>>> origin/master
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -591,26 +595,40 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 92
     width: 1118
     height: 465
   m_SceneLighting: 1
   lastFramingTime: 6833.698448245438
+=======
+    y: 19
+    width: 932
+    height: 373
+  m_SceneLighting: 1
+  lastFramingTime: 0
+>>>>>>> origin/master
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 0.17620808, y: 6.9615426, z: 0}
     speed: 2
     m_Value: {x: 0.17620808, y: 6.9615426, z: 0}
+=======
+    m_Target: {x: 5.835171, y: 3.8408728, z: 0}
+    speed: 2
+    m_Value: {x: 5.835171, y: 3.8408728, z: 0}
+>>>>>>> origin/master
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
-    showFog: 1
+    showFog: 0
     showMaterialUpdate: 0
-    showSkybox: 1
-    showFlares: 1
-    showImageEffects: 1
+    showSkybox: 0
+    showFlares: 0
+    showImageEffects: 0
   grid:
     xGrid:
       m_Target: 0
@@ -627,7 +645,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
+<<<<<<< HEAD
     m_Value: {x: 0, y: 0, z: 0, w: 1}
+=======
+    m_Value: {x: -0, y: 0, z: -0, w: -1}
+>>>>>>> origin/master
   m_Size:
     m_Target: 22
     speed: 2
@@ -670,9 +692,15 @@ MonoBehaviour:
     height: 465
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 76290000
     m_LastClickedID: 0
     m_ExpandedIDs: 9254feffb8abfeff764dffff28ebffff34ebffff4aebffffbcfbffff00000000
+=======
+    m_SelectedIDs: 70f7ffff
+    m_LastClickedID: -2192
+    m_ExpandedIDs: 66f7ffff1cfcffff00000000
+>>>>>>> origin/master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
