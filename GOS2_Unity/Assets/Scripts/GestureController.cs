@@ -6,15 +6,18 @@ using PDollarGestureRecognizer;
 
 public class GestureController : MonoBehaviour {
 
-    public Button startButton;
-    public Text textField;
+    //public Button startButton;
+    //public Text textField;
     public GesturesScript gestureScript;
     public AutomaticDrawer automaticDrawer;
+    public SpellsController spellController;
+    private bool success = false;
+    private bool failure = false;
 
 	// Use this for initialization
 	void Start () {
-        Button btn = startButton.GetComponent<Button>();
-        btn.onClick.AddListener(giveDrawingTask);
+        //Button btn = startButton.GetComponent<Button>();
+        //btn.onClick.AddListener(giveRandomDrawingTask);
     }
 	
 	// Update is called once per frame
@@ -22,21 +25,32 @@ public class GestureController : MonoBehaviour {
 		switch(gestureScript.getDrawingState())
         {
             case GesturesScript.DrawingState.failedDrawing:
-                textField.text = "slabiak!";
+                //spellController.createSpellEffect(
                 break;
             case GesturesScript.DrawingState.succededDrawing:
-                textField.text = "koxik!";
+                spellController.createSpellEffect(gestureScript.wantedGesture);
+                success = true;
                 break;
         }
 	}
 
-    void giveDrawingTask()
+    void giveRandomDrawingTask()
     {
         Gesture randomGesture = gestureScript.getRandomGesture();
-        textField.text = randomGesture.Name;
+        //textField.text = randomGesture.Name;
         gestureScript.askForGesture(randomGesture.Name);
 
         automaticDrawer.startMove(Instantiate(gestureScript.trailPrefab), scalePoints(randomGesture.Points));
+    }
+
+    public void showGesture(string gestureName)
+    {
+        automaticDrawer.startMove(Instantiate(gestureScript.trailPrefab), scalePoints(gestureScript.getGesture(gestureName).Points));
+    }
+
+    public void giveDrawingTask(string gestureName)
+    {
+        gestureScript.askForGesture(gestureName);
     }
 
     Point[] scalePoints(Point[] points)
@@ -52,5 +66,25 @@ public class GestureController : MonoBehaviour {
             p.Y *= 5;
         }
         return newPoints;
+    }
+
+    public bool hasSucceeded()
+    {
+        if (success)
+        {
+            success = false;
+            return true;
+        }
+        else return false;
+    }
+
+    public bool hasFailed()
+    {
+        if (failure)
+        {
+            failure = false;
+            return true;
+        }
+        else return false;
     }
 }
