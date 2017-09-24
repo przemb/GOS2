@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -281,6 +281,8 @@ GameObject:
   - component: {fileID: 743442613}
   - component: {fileID: 743442612}
   - component: {fileID: 743442611}
+  - component: {fileID: 743442618}
+  - component: {fileID: 743442617}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -353,7 +355,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gestureController: {fileID: 743442614}
+  ac: {fileID: 743442618}
   wizard: {fileID: 203505418}
+  chanceForPocieszenie: 1
 --- !u!4 &743442616
 Transform:
   m_ObjectHideFlags: 0
@@ -367,6 +371,125 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &743442617
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 743442610}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &743442618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 743442610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29df892584711604d918bf26ad1b3656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  przywitanie: {fileID: 8300000, guid: 501c0ebe93455274b87f51eed56ead64, type: 3}
+  zadanie_:
+  - {fileID: 8300000, guid: 6bfe44dbbcbc93c4d840b4b2e771c13d, type: 3}
+  - {fileID: 8300000, guid: 505cb59de77607647b14be9e5ee3537b, type: 3}
+  - {fileID: 8300000, guid: 86fa92443d214a849aa4c532517f2ed4, type: 3}
+  - {fileID: 8300000, guid: 0d180dec42386454f90bdd97a455c086, type: 3}
+  - {fileID: 8300000, guid: 4cc4b98f4129cf145bf8a2260f3b3329, type: 3}
+  porada_:
+  - {fileID: 8300000, guid: 67a2c69832fdee642999c9c69c946ee7, type: 3}
+  - {fileID: 8300000, guid: de2531c4ac004d9408c83c8a9150e78e, type: 3}
+  - {fileID: 8300000, guid: d58381fd48da4bd41bc45da41cf7cc9d, type: 3}
+  czar_:
+  - {fileID: 8300000, guid: ca609a20fea13c94383460c21b1c8bc1, type: 3}
+  - {fileID: 8300000, guid: ac3e4080896f1c046bcb3735a42413ed, type: 3}
+  - {fileID: 8300000, guid: 97f027899304ccd4aa1142167b5a3976, type: 3}
+  - {fileID: 8300000, guid: 81807c6644ea39340aad75c724fa90b1, type: 3}
+  - {fileID: 8300000, guid: 2ad37debc61d97449b9cc9efa62b4218, type: 3}
+  - {fileID: 8300000, guid: 85d22d8f57ec85247b01ddf07561b733, type: 3}
+  pocieszenie_:
+  - {fileID: 8300000, guid: 85937a3d88c244646b20ccc511900d03, type: 3}
+  - {fileID: 8300000, guid: 01ddae6dd1ae14f43ae730828a7b5a42, type: 3}
+  - {fileID: 8300000, guid: 309f0f6cd6845984eaf0a7af4533a171, type: 3}
+  - {fileID: 8300000, guid: 23738f4271f0d124abcf30bb3541a480, type: 3}
+  - {fileID: 8300000, guid: 14ccd74a7e3ad94439fe4abdaee24fb4, type: 3}
+  - {fileID: 8300000, guid: edc49a12551a97d4cb024ae8c1183d90, type: 3}
+  gratulacje_: []
+  zakonczenie: {fileID: 8300000, guid: 6c5c17d12a68b8244bcb1b917b2d165f, type: 3}
+  audio: {fileID: 0}
 --- !u!1 &921096044
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +685,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1703240144}
   - component: {fileID: 1703240143}
-  - component: {fileID: 1703240145}
   m_Layer: 0
   m_Name: AudioSource
   m_TagString: Untagged
@@ -663,51 +785,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1703240145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1703240142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29df892584711604d918bf26ad1b3656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  przywitanie: {fileID: 8300000, guid: 501c0ebe93455274b87f51eed56ead64, type: 3}
-  zadanie_:
-  - {fileID: 8300000, guid: 6bfe44dbbcbc93c4d840b4b2e771c13d, type: 3}
-  - {fileID: 8300000, guid: 505cb59de77607647b14be9e5ee3537b, type: 3}
-  - {fileID: 8300000, guid: 86fa92443d214a849aa4c532517f2ed4, type: 3}
-  - {fileID: 8300000, guid: 0d180dec42386454f90bdd97a455c086, type: 3}
-  - {fileID: 8300000, guid: 4cc4b98f4129cf145bf8a2260f3b3329, type: 3}
-  porada_:
-  - {fileID: 8300000, guid: 67a2c69832fdee642999c9c69c946ee7, type: 3}
-  - {fileID: 8300000, guid: de2531c4ac004d9408c83c8a9150e78e, type: 3}
-  - {fileID: 8300000, guid: d58381fd48da4bd41bc45da41cf7cc9d, type: 3}
-  czar_:
-  - {fileID: 8300000, guid: ca609a20fea13c94383460c21b1c8bc1, type: 3}
-  - {fileID: 8300000, guid: ac3e4080896f1c046bcb3735a42413ed, type: 3}
-  - {fileID: 8300000, guid: 97f027899304ccd4aa1142167b5a3976, type: 3}
-  - {fileID: 8300000, guid: 81807c6644ea39340aad75c724fa90b1, type: 3}
-  - {fileID: 8300000, guid: 2ad37debc61d97449b9cc9efa62b4218, type: 3}
-  - {fileID: 8300000, guid: 85d22d8f57ec85247b01ddf07561b733, type: 3}
-  pocieszenie_:
-  - {fileID: 8300000, guid: edc49a12551a97d4cb024ae8c1183d90, type: 3}
-  - {fileID: 8300000, guid: dfa047000b645c64fa127a069ec67a78, type: 3}
-  - {fileID: 8300000, guid: 04c9c3de133333448b793eccf24f1345, type: 3}
-  - {fileID: 8300000, guid: 85937a3d88c244646b20ccc511900d03, type: 3}
-  - {fileID: 8300000, guid: 01ddae6dd1ae14f43ae730828a7b5a42, type: 3}
-  - {fileID: 8300000, guid: 309f0f6cd6845984eaf0a7af4533a171, type: 3}
-  - {fileID: 8300000, guid: 23738f4271f0d124abcf30bb3541a480, type: 3}
-  - {fileID: 8300000, guid: 14ccd74a7e3ad94439fe4abdaee24fb4, type: 3}
-  gratulacje_:
-  - {fileID: 8300000, guid: ff57bd5488bdf494ab7311e587e11402, type: 3}
-  - {fileID: 8300000, guid: ffffa4bfac45e0445bfab45eb45e1107, type: 3}
-  - {fileID: 8300000, guid: 3161f9fbad1290c4cabbecafe39c9083, type: 3}
-  - {fileID: 8300000, guid: bb4d5f1a62a34954aad530621359ba83, type: 3}
-  zakonczenie: {fileID: 8300000, guid: 6c5c17d12a68b8244bcb1b917b2d165f, type: 3}
-  audio: {fileID: 0}
 --- !u!1 &1801080040
 GameObject:
   m_ObjectHideFlags: 0

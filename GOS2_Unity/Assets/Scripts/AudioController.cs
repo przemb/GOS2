@@ -20,53 +20,51 @@ public class AudioController : MonoBehaviour {
 	}
 		
 
-	public IEnumerator audio_przywitanie()
+	public void audio_przywitanie()
 	{
-		audio.clip = przywitanie;
-		audio.Play ();
-		yield return new WaitForSeconds(audio.clip.length);
+		//audio.clip = przywitanie;
+		audio.PlayOneShot(przywitanie);
 	}
 
-	public IEnumerator audio_zadanie_(int x)
+	public void audio_zadanie_(int x)
 	{
 		audio.clip = zadanie_[x];
 		audio.Play ();
-		yield return new WaitForSeconds(audio.clip.length);
 	}
 
-	public IEnumerator audio_porada_(int x)
+	public void audio_porada_(int x)
 	{
 		audio.clip = porada_[x];
 		audio.Play ();
-		yield return new WaitForSeconds(audio.clip.length);
 	}
 
-	public IEnumerator audio_czar_(int x)
+	public void audio_czar_(int x)
 	{
 		audio.clip = czar_[x];
 		audio.Play ();
-		yield return new WaitForSeconds(audio.clip.length);
 	}
 
-	public IEnumerator audio_pocieszenie_(int x)
+	public void audio_pocieszenie_(int x)
 	{
 		audio.clip = pocieszenie_[x];
 		audio.Play ();
-		yield return new WaitForSeconds(audio.clip.length);
 	}
 
-	public IEnumerator audio_gratulacje_(int x)
+    public void randomPocieszenie()
+    {
+        audio_pocieszenie_(Random.Range(0, pocieszenie_.Length));
+    }
+
+	public void audio_gratulacje_(int x)
 	{
 		audio.clip = gratulacje_[x];
 		audio.Play ();
-		yield return new WaitForSeconds(audio.clip.length);
 	}
 
-	public IEnumerator audio_zakonczenie()
+	public void audio_zakonczenie()
 	{
 		audio.clip = zakonczenie;
 		audio.Play ();
-		yield return new WaitForSeconds(audio.clip.length);
 	}
 	
 	// Update is called once per frame

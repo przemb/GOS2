@@ -28,15 +28,15 @@ public class SpellsController : MonoBehaviour {
 
     private void explosion(int explosionCount)
     {
-        float randomX = Random.Range(0, 1);
-        float randomY = Random.Range(0, 1);
-
-        Vector3 randomWorldPos = Camera.main.ViewportToWorldPoint(new Vector3(randomX, randomY, 0));
-
         for(int i = 0; i < explosionCount; i++)
         {
             Instantiate(explosionPrefab, getRandomWorldPosition(), Quaternion.identity);
         }
+    }
+
+    private void summonRabbit()
+    {
+
     }
 
     private Vector3 getRandomWorldPosition()

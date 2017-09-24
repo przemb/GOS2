@@ -25,7 +25,7 @@ public class GestureController : MonoBehaviour {
 		switch(gestureScript.getDrawingState())
         {
             case GesturesScript.DrawingState.failedDrawing:
-                //spellController.createSpellEffect(
+                failure = true;
                 break;
             case GesturesScript.DrawingState.succededDrawing:
                 spellController.createSpellEffect(gestureScript.wantedGesture);
