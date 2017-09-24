@@ -13,6 +13,8 @@ public class SpellsController : MonoBehaviour {
     public Sprite nightBackground;
     public GameObject background;
     public GameObject wizard;
+    public AudioSource musicPlayer;
+    public AudioClip[] summerAndWinterMusic; 
 
     public float speed;
 
@@ -41,6 +43,7 @@ public class SpellsController : MonoBehaviour {
                 movingWizard = false;
                 moving2 = false;
                 wizard.GetComponent<Animator>().SetTrigger("transformation");
+                wizard.GetComponent<AudioSource>().Stop();
                 Instantiate(poof, wizard.transform.position, Quaternion.identity);
                 blockade = false;
             }
@@ -119,6 +122,8 @@ public class SpellsController : MonoBehaviour {
     private void changeBackground()
     {
         background.GetComponent<SpriteRenderer>().sprite = nightBackground;
+        musicPlayer.clip = summerAndWinterMusic[1];
+        musicPlayer.Play();
     }
 
     private void liftBlockade()
@@ -131,6 +136,7 @@ public class SpellsController : MonoBehaviour {
         blockade = true;
         movingWizard = true;
         wizard.GetComponent<Animator>().SetTrigger("transformation");
+        wizard.GetComponent<AudioSource>().Play();
         Instantiate(poof, wizard.transform.position, Quaternion.identity);
     }
 
