@@ -43,6 +43,7 @@ public class SpellsController : MonoBehaviour {
                 movingWizard = false;
                 moving2 = false;
                 wizard.GetComponent<Animator>().SetTrigger("transformation");
+                wizard.GetComponent<AudioSource>().Stop();
                 Instantiate(poof, wizard.transform.position, Quaternion.identity);
                 blockade = false;
             }
@@ -135,6 +136,7 @@ public class SpellsController : MonoBehaviour {
         blockade = true;
         movingWizard = true;
         wizard.GetComponent<Animator>().SetTrigger("transformation");
+        wizard.GetComponent<AudioSource>().Play();
         Instantiate(poof, wizard.transform.position, Quaternion.identity);
     }
 
