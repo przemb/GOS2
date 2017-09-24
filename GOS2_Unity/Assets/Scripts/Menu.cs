@@ -29,6 +29,11 @@ public class Menu : MonoBehaviour {
 		//UnityEditor.EditorApplication.isPlaying = false;
 	}
 
+    public static void GoToMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
+
 
 
 }

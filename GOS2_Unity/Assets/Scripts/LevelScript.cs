@@ -12,6 +12,8 @@ public class LevelScript : MonoBehaviour {
 
     public float chanceForPocieszenie = 1;
 
+    public GameObject finalUI;
+
     private string[] gestures;
 
     private bool finished = false;
@@ -61,6 +63,7 @@ public class LevelScript : MonoBehaviour {
                     {
                         ac.audio_zakonczenie();
                         finished = true;
+                        finalUI.SetActive(true);
                     }
                     audioState = AudioState.introduction;
                     break;
@@ -92,7 +95,10 @@ public class LevelScript : MonoBehaviour {
             }
         }
     }
-
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
     private void startLesson()
     {
         spellLesson(gestures[lessonNumber - 1]);
