@@ -38,7 +38,7 @@ public class LevelScript : MonoBehaviour {
     
 	// Update is called once per frame
 	void Update () {
-        if(!ac.audio.isPlaying && !finished)
+        if(!ac.audio.isPlaying && !finished && !gestureController.spellController.blockade)
         {
             switch (audioState)
             {
