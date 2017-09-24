@@ -33,7 +33,7 @@ public class GesturesScript : MonoBehaviour {
     List<Point> currentTrailPoints;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         trainingGestures = new List<Gesture>();
         currentTrailPoints = new List<Point>();
         templateGestures = new Dictionary<string, Gesture>();
@@ -50,7 +50,8 @@ public class GesturesScript : MonoBehaviour {
             if(allowDrawing)
             {
                 startDrawing();
-                trailSoundSource.Play();}
+                trailSoundSource.Play();
+            }
         }
         else if (trail != null && Input.GetMouseButton(0))
         {
@@ -135,7 +136,7 @@ public class GesturesScript : MonoBehaviour {
 
     void loadTemplateGestures()
     {
-        foreach (string filename in Directory.GetFiles(Application.dataPath + "/GestureTraining/Templates", "*.xml"))
+        foreach (string filename in Directory.GetFiles(Application.streamingAssetsPath + "/GestureTraining/Templates", "*.xml"))
         {
             Gesture loadedGesture = ReadGesture(filename);
             templateGestures.Add(loadedGesture.Name, loadedGesture);
@@ -167,7 +168,7 @@ public class GesturesScript : MonoBehaviour {
 
     void loadGestureTrainingSet()
     {
-        foreach(string filename in Directory.GetFiles(Application.dataPath + "/GestureTraining/", "*.xml"))
+        foreach(string filename in Directory.GetFiles(Application.streamingAssetsPath + "/GestureTraining/", "*.xml"))
         {
             trainingGestures.Add(ReadGesture(filename));
         }

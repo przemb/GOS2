@@ -32,7 +32,7 @@ public class LevelScript : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         gestures = new string[] { "straight line", "l", "b", "spiral", "star" };
     }
 	

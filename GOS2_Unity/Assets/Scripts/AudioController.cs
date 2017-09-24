@@ -18,7 +18,7 @@ public class AudioController : MonoBehaviour {
 	public AudioSource audio;
 
 	// Use this for initialization
-	void Start () { 
+	void Awake () { 
 		 audio = GetComponent<AudioSource>();
 	}
     
