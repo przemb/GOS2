@@ -73,7 +73,7 @@ public class GesturesScript : MonoBehaviour {
     private void startDrawing()
     {
 
-        currentTrailPoints = new List<Point>();
+        currentTrailPoints = new List<Point>(1);
 
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 10;
@@ -158,6 +158,10 @@ public class GesturesScript : MonoBehaviour {
 
     bool classifyDrawnShape(Gesture candidate)
     {
+        if(candidate.Points.Length <= 1 || candidate.Points[1] == null)
+        {
+            return false;
+        }
         StringFloatPair classificationResult = PointCloudRecognizer.Classify(candidate, trainingGestures.ToArray());
         if (classificationResult.f < 0.2) //to be set experimentally
         {
