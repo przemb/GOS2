@@ -21,6 +21,7 @@ public class AudioController : MonoBehaviour {
 	void Start () { 
 		 audio = GetComponent<AudioSource>();
 	}
+    
 		
 
 	public void audio_przywitanie()

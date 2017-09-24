@@ -12,6 +12,8 @@ public class GesturesScript : MonoBehaviour {
 
     public string wantedGesture;
 
+    public AudioSource trailSoundSource;
+
     private GameObject trail;
     private bool allowDrawing = false;
 
@@ -48,7 +50,7 @@ public class GesturesScript : MonoBehaviour {
             if(allowDrawing)
             {
                 startDrawing();
-            }
+                trailSoundSource.Play();}
         }
         else if (trail != null && Input.GetMouseButton(0))
         {
@@ -62,6 +64,7 @@ public class GesturesScript : MonoBehaviour {
             if(drawingState == DrawingState.drawing)
             {
                 finishDrawing();
+                trailSoundSource.Stop();
             }    
         }
     }
