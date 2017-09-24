@@ -254,6 +254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trailPrefab: {fileID: 1581908919673366, guid: ec0b942fe5e50124783c6a9ff925759e,
     type: 2}
+  wizardTrail: {fileID: 1582055851601914, guid: 692bb7bf4451c4a4780fb0480a1ca4e0,
+    type: 2}
   wantedGesture: 
 --- !u!114 &743442614
 MonoBehaviour:
