@@ -8,6 +8,8 @@ public class AutomaticDrawer : MonoBehaviour {
     private GameObject movedObject;
     private Queue<Point> path;
 
+    public AudioSource trailAudio;
+
     public float speed = 1;
 
     //private 
@@ -23,12 +25,17 @@ public class AutomaticDrawer : MonoBehaviour {
         {
             moveObject();
         }
+        else if(movedObject != null && path.Count == 0)
+        {
+            trailAudio.Stop();
+        }
 	}
 
     public void startMove(GameObject obj, Point[] path)
     {
         movedObject = obj;
         this.path = new Queue<Point>(path);
+        trailAudio.Play();
     }
 
     private void moveObject()
