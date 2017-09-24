@@ -7,6 +7,7 @@ public class SpellsController : MonoBehaviour {
     public GameObject explosionPrefab;
     public GameObject rabbit;
     public GameObject poof;
+    public GameObject sweets;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,9 @@ public class SpellsController : MonoBehaviour {
             case "l":
                 summonRabbit();
                 break;
+            case "b":
+                summonSweets();
+                break;
         }
     }
 
@@ -47,7 +51,9 @@ public class SpellsController : MonoBehaviour {
 
     private void summonSweets()
     {
-
+        sweets.SetActive(true);
+        Instantiate(poof, new Vector3(-5.5f, -3.5f, 0), Quaternion.identity);
+        Instantiate(poof, new Vector3(-1f, -3, 0), Quaternion.identity);
     }
 
     private Vector3 getRandomWorldPosition()
