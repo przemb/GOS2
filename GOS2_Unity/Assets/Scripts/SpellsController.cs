@@ -52,26 +52,39 @@ public class SpellsController : MonoBehaviour {
         switch(gesture)
         {
             case "straight line":
-                transformation();
-                //explosion(5);
+                explosion(5, 30);
+                //summonRabbit();
                 break;
             case "l":
-                summonRabbit();
+                summonSweets();
                 break;
             case "b":
-                summonSweets();
+                transformation();
                 break;
             case "spiral":
                 summonWinter();
                 break;
+            case "star":
+                explosion(5, 30);
+                break;
         }
     }
 
-    private void explosion(int explosionCount)
+    private void explosion(float maxDelay, int numberOfWaves)
     {
-        for(int i = 0; i < explosionCount; i++)
+        for(int i = 0; i < numberOfWaves; i++)
         {
-            Instantiate(explosionPrefab, getRandomWorldPosition(), Quaternion.identity);
+            float delay = Random.Range(0, maxDelay);
+            Invoke("explode", delay);
+        }
+    }
+
+    private void explode()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject explosion = Instantiate(explosionPrefab, getRandomWorldPosition(), Quaternion.identity);
+            Destroy(explosion, explosion.GetComponent<ParticleSystem>().main.startLifetime.constant);
         }
     }
 
