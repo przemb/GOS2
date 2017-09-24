@@ -13,6 +13,7 @@ public class AudioController : MonoBehaviour {
 	public AudioClip zakonczenie;
 
 	public AudioClip success;
+	public AudioClip error;
 
 	public AudioSource audio;
 
@@ -74,6 +75,13 @@ public class AudioController : MonoBehaviour {
 		audio.clip = success;
 		audio.Play ();
 	}
+
+	public void audio_error()
+	{
+		audio.clip = success;
+		audio.Play ();
+	}
+
 	
 	// Update is called once per frame
 	void Update () {
