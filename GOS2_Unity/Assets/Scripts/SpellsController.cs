@@ -52,8 +52,8 @@ public class SpellsController : MonoBehaviour {
         switch(gesture)
         {
             case "straight line":
-                explosion(5, 30);
-                //summonRabbit();
+                //explosion(5, 30);
+                summonRabbit();
                 break;
             case "l":
                 summonSweets();
@@ -72,11 +72,13 @@ public class SpellsController : MonoBehaviour {
 
     private void explosion(float maxDelay, int numberOfWaves)
     {
+        blockade = true;
         for(int i = 0; i < numberOfWaves; i++)
         {
             float delay = Random.Range(0, maxDelay);
             Invoke("explode", delay);
         }
+        Invoke("liftBlockade", maxDelay);
     }
 
     private void explode()
@@ -90,27 +92,38 @@ public class SpellsController : MonoBehaviour {
 
     private void summonRabbit()
     {
+        blockade = true;
         Instantiate(rabbit, new Vector3(4.5f, -3, 0), Quaternion.identity);
         Instantiate(poof, new Vector3(4.5f, -3, 0), Quaternion.identity);
+        Invoke("liftBlockade", 2);
     }
 
     private void summonSweets()
     {
+        blockade = true;
         sweets.SetActive(true);
         Instantiate(poof, new Vector3(-5.5f, -3.5f, 0), Quaternion.identity);
         Instantiate(poof, new Vector3(-1f, -3, 0), Quaternion.identity);
+        Invoke("liftBlockade", 2);
     }
 
     private void summonWinter()
     {
+        blockade = true;
         Instantiate(snow);
         Instantiate(strongSnow);
         Invoke("changeBackground", 1.5f);
+        Invoke("liftBlockade", 3);
     }
 
     private void changeBackground()
     {
         background.GetComponent<SpriteRenderer>().sprite = nightBackground;
+    }
+
+    private void liftBlockade()
+    {
+        blockade = false;
     }
 
     private void transformation()
