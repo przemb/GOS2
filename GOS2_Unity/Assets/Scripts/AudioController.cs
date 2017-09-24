@@ -12,6 +12,8 @@ public class AudioController : MonoBehaviour {
 	public AudioClip[] gratulacje_;
 	public AudioClip zakonczenie;
 
+	public AudioClip success;
+
 	public AudioSource audio;
 
 	// Use this for initialization
@@ -64,6 +66,12 @@ public class AudioController : MonoBehaviour {
 	public void audio_zakonczenie()
 	{
 		audio.clip = zakonczenie;
+		audio.Play ();
+	}
+
+	public void audio_success()
+	{
+		audio.clip = success;
 		audio.Play ();
 	}
 	
