@@ -13,6 +13,8 @@ public class SpellsController : MonoBehaviour {
     public Sprite nightBackground;
     public GameObject background;
     public GameObject wizard;
+    public AudioSource musicPlayer;
+    public AudioClip[] summerAndWinterMusic; 
 
     public float speed;
 
@@ -119,6 +121,8 @@ public class SpellsController : MonoBehaviour {
     private void changeBackground()
     {
         background.GetComponent<SpriteRenderer>().sprite = nightBackground;
+        musicPlayer.clip = summerAndWinterMusic[1];
+        musicPlayer.Play();
     }
 
     private void liftBlockade()
