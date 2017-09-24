@@ -8,11 +8,11 @@ using System.IO;
 public class GesturesScript : MonoBehaviour {
 
     public GameObject trailPrefab;
+    public GameObject wizardTrail;
 
     public string wantedGesture;
 
     private GameObject trail;
-
     private bool allowDrawing = false;
 
     public enum DrawingState

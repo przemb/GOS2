@@ -45,7 +45,7 @@ public class GestureController : MonoBehaviour {
 
     public void showGesture(string gestureName)
     {
-        automaticDrawer.startMove(Instantiate(gestureScript.trailPrefab), scalePoints(gestureScript.getGesture(gestureName).Points));
+        automaticDrawer.startMove(Instantiate(gestureScript.wizardTrail), scalePoints(gestureScript.getGesture(gestureName).Points));
     }
 
     public void giveDrawingTask(string gestureName)
