@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpellsController : MonoBehaviour {
 
     public GameObject explosionPrefab;
+    public GameObject rabbit;
+    public GameObject poof;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +25,9 @@ public class SpellsController : MonoBehaviour {
             case "straight line":
                 explosion(5);
                 break;
+            case "l":
+                summonRabbit();
+                break;
         }
     }
 
@@ -35,6 +40,12 @@ public class SpellsController : MonoBehaviour {
     }
 
     private void summonRabbit()
+    {
+        Instantiate(rabbit, new Vector3(4.5f, -3, 0), Quaternion.identity);
+        Instantiate(poof, new Vector3(4.5f, -3, 0), Quaternion.identity);
+    }
+
+    private void summonSweets()
     {
 
     }
