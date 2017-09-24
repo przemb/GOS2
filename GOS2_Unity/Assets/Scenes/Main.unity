@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e3ae18d15d0df40ab0bfdfec337bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trailAudio: {fileID: 0}
+  trailAudio: {fileID: 872659088}
   speed: 1
 --- !u!114 &743442613
 MonoBehaviour:
@@ -628,6 +628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5472570a7ea942418a1fa100bf32b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  porady: []
+  audioSource: {fileID: 0}
 --- !u!1 &872659087
 GameObject:
   m_ObjectHideFlags: 0
