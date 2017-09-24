@@ -18,10 +18,17 @@ public class Menu : MonoBehaviour {
         SceneManager.LoadScene("Main");
     }
 
+	public void CreditsPressed ()
+	{
+		SceneManager.LoadScene("Credits");
+	}
+
 	public void ExitPressed ()
 	{
 		Application.Quit();
 		//UnityEditor.EditorApplication.isPlaying = false;
 	}
+
+
 
 }
