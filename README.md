@@ -20,7 +20,8 @@ Gra cały czas jest w fazie rozwoju, ale jeśli mimo to chcesz ją pobrać,  **[
 5. Czaruj :zap:
 
 ## Screeny
-<img style="float: left; width: 49.5%; margin-right: 1%; margin-bottom: 0.5em;" src="https://raw.githubusercontent.com/przemb/GOS2/master/Game_Screenshots/1.png" /><img style="float: left; width: 49.5%; margin-right: 0%; margin-bottom: 0.5em;" src="https://raw.githubusercontent.com/przemb/GOS2/master/Game_Screenshots/3.png" />
+<img style="float: left; width: 20%; margin-right: 1%; margin-bottom: 0.5em;" src="https://raw.githubusercontent.com/przemb/GOS2/master/Game_Screenshots/1.png" />
+<img style="float: left; width: 20%; margin-right: 0%; margin-bottom: 0.5em;" src="https://raw.githubusercontent.com/przemb/GOS2/master/Game_Screenshots/3.png" />
 
 ---
 <b id="f1">1</b> *lub myszki* :mouse: [↩](#a1) 
