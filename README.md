@@ -5,7 +5,7 @@
 
 Gracz wciela się w rolę młodego czarodzieja, który za za pomocą *różdżki*<sup id="a1">[1](#f1)</sup> stara się powtórzyć przedstawione kształty.
 
-Idea gry opiera się na naśladownictwie oraz wykorzystaniu atrakcyjnych dystaktorów. Są to główne elementy terapeutyczne zawarte w rozgrywce. 
+Idea gry opiera się na naśladownictwie oraz wykorzystaniu atrakcyjnych dystraktorów. Są to główne elementy terapeutyczne zawarte w rozgrywce. 
 
 ***Czary Mary*** jest darmową i otwartą grą, która powstała podczas drugiej edycji wydarzenia [*Gra o Słoń*](https://psychogra.pl) i otrzymała **wyróżnienie**! :blush:
 
