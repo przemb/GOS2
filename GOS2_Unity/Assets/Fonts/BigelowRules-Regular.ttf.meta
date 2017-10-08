@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 4f398b16f8a2a354e84c9795e8e5e228
+timeCreated: 1507368603
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bigelow Rules
+  fontNames:
+  - Bigelow Rules
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

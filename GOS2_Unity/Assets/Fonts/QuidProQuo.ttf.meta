@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 4b22cec6aceb60e40a0ed818532d2042
+timeCreated: 1507400618
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Quid Pro Quo
+  fontNames:
+  - Quid Pro Quo
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
