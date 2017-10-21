@@ -5,7 +5,11 @@ using UnityEngine;
 public class SpellsController : MonoBehaviour {
 
     public GameObject explosionPrefab;
-    public GameObject rabbit;
+
+    public GameObject rabbit1;
+    public GameObject rabbit2;
+    public GameObject rabbit3;
+
     public GameObject poof;
     public GameObject sweets;
     public GameObject snow;
@@ -96,8 +100,11 @@ public class SpellsController : MonoBehaviour {
     private void summonRabbit()
     {
         blockade = true;
-        Instantiate(rabbit, new Vector3(4.5f, -3, 0), Quaternion.identity);
-        Instantiate(poof, new Vector3(4.5f, -3, 0), Quaternion.identity);
+        rabbit1.GetComponent<Animator>().SetTrigger("start");
+        rabbit2.GetComponent<Animator>().SetTrigger("start");
+        rabbit3.GetComponent<Animator>().SetTrigger("start");
+
+        //Instantiate(poof, new Vector3(4.5f, -3, 0), Quaternion.identity);
         Invoke("liftBlockade", 2);
     }
 
