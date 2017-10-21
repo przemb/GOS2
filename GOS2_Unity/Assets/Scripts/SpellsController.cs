@@ -18,7 +18,9 @@ public class SpellsController : MonoBehaviour {
     public GameObject background;
     public GameObject wizard;
     public AudioSource musicPlayer;
-    public AudioClip[] summerAndWinterMusic; 
+    public AudioClip[] summerAndWinterMusic;
+
+    public AudioSource rabbitSource;
 
     public float speed;
 
@@ -103,7 +105,7 @@ public class SpellsController : MonoBehaviour {
         rabbit1.GetComponent<Animator>().SetTrigger("start");
         rabbit2.GetComponent<Animator>().SetTrigger("start");
         rabbit3.GetComponent<Animator>().SetTrigger("start");
-
+        rabbitSource.Play();
         //Instantiate(poof, new Vector3(4.5f, -3, 0), Quaternion.identity);
         Invoke("liftBlockade", 2);
     }
