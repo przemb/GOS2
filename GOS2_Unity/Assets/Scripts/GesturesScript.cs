@@ -17,7 +17,7 @@ public class GesturesScript : MonoBehaviour {
     private GameObject trail;
     private bool allowDrawing = false;
 
-    public RuntimePlatform platform;
+    //public RuntimePlatform platform;
 
     public enum DrawingState
     {
@@ -41,12 +41,6 @@ public class GesturesScript : MonoBehaviour {
         templateGestures = new Dictionary<string, Gesture>();
         loadGestureTrainingSet();
         loadTemplateGestures();
-
-#if UNITY_ANDROID
-        platform = RuntimePlatform.Android;
-#elif UNITY_STANDALONE_WIN
-        platform = RuntimePlatform.WindowsPlayer;
-#endif
     }
 
     // Update is called once per frame
@@ -54,8 +48,8 @@ public class GesturesScript : MonoBehaviour {
         // -- Drag
         // ------------------------------------------------
 
-        if (platform == RuntimePlatform.WindowsPlayer)
-        { 
+        //if (Application.platform == RuntimePlatform.WindowsPlayer)
+        //{ 
             if (Input.GetMouseButtonDown(0))
             {
                 if (allowDrawing)
@@ -79,33 +73,33 @@ public class GesturesScript : MonoBehaviour {
                     trailSoundSource.Stop();
                 }
             }
-        }
-        else if(platform == RuntimePlatform.Android)
-        {
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-            {
-                if (allowDrawing)
-                {
-                    startDrawing();
-                    trailSoundSource.Play();
-                }
-            }
-            else if (trail != null && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-            {
-                if (drawingState == DrawingState.drawing)
-                {
-                    continueDrawing();
-                }
-            }
-            else if (trail != null && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-            {
-                if (drawingState == DrawingState.drawing)
-                {
-                    finishDrawing();
-                    trailSoundSource.Stop();
-                }
-            }
-        }
+        //}
+        //else if(Application.platform == RuntimePlatform.Android)
+        //{
+        //    if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        //    {
+        //        if (allowDrawing)
+        //        {
+        //            startDrawing();
+        //            trailSoundSource.Play();
+        //        }
+        //    }
+        //    else if (trail != null && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        //    {
+        //        if (drawingState == DrawingState.drawing)
+        //        {
+        //            continueDrawing();
+        //        }
+        //    }
+        //    else if (trail != null && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        //    {
+        //        if (drawingState == DrawingState.drawing)
+        //        {
+        //            finishDrawing();
+        //            trailSoundSource.Stop();
+        //        }
+        //    }
+        //}
 
     }
 
@@ -115,14 +109,14 @@ public class GesturesScript : MonoBehaviour {
         currentTrailPoints = new List<Point>(1);
 
         Vector3 mousePos;
-        if(platform == RuntimePlatform.WindowsPlayer)
-        {
+        //if(Application.platform == RuntimePlatform.WindowsPlayer)
+        //{
             mousePos = Input.mousePosition;
-        }
-        else
-        {
-            mousePos = Input.GetTouch(0).position;
-        }
+        //}
+        //else
+        //{
+        //    mousePos = Input.GetTouch(0).position;
+        //}
 
         mousePos.z = 10;
         Vector3 position = Camera.main.ScreenToWorldPoint(mousePos);
@@ -136,14 +130,14 @@ public class GesturesScript : MonoBehaviour {
     private void continueDrawing()
     {
         Vector3 mousePos;
-        if (platform == RuntimePlatform.WindowsPlayer)
-        {
+        //if (Application.platform == RuntimePlatform.WindowsPlayer)
+        //{
             mousePos = Input.mousePosition;
-        }
-        else
-        {
-            mousePos = Input.GetTouch(0).position;
-        }
+        //}
+        //else
+        //{
+        //    mousePos = Input.GetTouch(0).position;
+        //}
         mousePos.z = 10;
         Vector3 position = Camera.main.ScreenToWorldPoint(mousePos);
      
