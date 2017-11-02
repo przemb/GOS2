@@ -186,9 +186,11 @@ public class GesturesScript : MonoBehaviour {
 
     void loadTemplateGestures()
     {
-        foreach (string filename in Directory.GetFiles(Application.streamingAssetsPath + "/GestureTraining/Templates", "*.xml"))
+        foreach (TextAsset file in Resources.LoadAll("GestureTraining/Templates", typeof(TextAsset)))
         {
-            Gesture loadedGesture = ReadGesture(filename);
+            MemoryStream assetStream = new MemoryStream(file.bytes);
+
+            Gesture loadedGesture = ReadGesture(assetStream);
             templateGestures.Add(loadedGesture.Name, loadedGesture);
         }
     }
@@ -222,13 +224,15 @@ public class GesturesScript : MonoBehaviour {
 
     void loadGestureTrainingSet()
     {
-        foreach(string filename in Directory.GetFiles(Application.streamingAssetsPath + "/GestureTraining/", "*.xml"))
+        foreach (TextAsset file in Resources.LoadAll("GestureTraining/", typeof(TextAsset)))
         {
-            trainingGestures.Add(ReadGesture(filename));
+            MemoryStream assetStream = new MemoryStream(file.bytes);
+
+            trainingGestures.Add(ReadGesture(assetStream));
         }
     }
 
-    public static Gesture ReadGesture(string fileName)
+    public static Gesture ReadGesture(MemoryStream file)
     {
         List<Point> points = new List<Point>();
         XmlTextReader xmlReader = null;
@@ -236,7 +240,7 @@ public class GesturesScript : MonoBehaviour {
         string gestureName = "";
         try
         {
-            xmlReader = new XmlTextReader(File.OpenText(fileName));
+            xmlReader = new XmlTextReader(file);
             while (xmlReader.Read())
             {
                 if (xmlReader.NodeType != XmlNodeType.Element) continue;
