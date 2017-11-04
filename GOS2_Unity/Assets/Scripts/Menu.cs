@@ -12,6 +12,8 @@ public class Menu : MonoBehaviour {
 
 	public AudioSource audioSource;
 
+	public Canvas creditsCanvas;
+
     // Use this for initialization
     void Start () {
 		
@@ -25,7 +27,8 @@ public class Menu : MonoBehaviour {
 
 	public void CreditsPressed ()
 	{
-		SceneManager.LoadScene("Credits");
+		//SceneManager.LoadScene("Credits");
+		creditsCanvas.sortingOrder = 2;
 	}
 
 	public void ExitPressed ()
@@ -47,6 +50,11 @@ public class Menu : MonoBehaviour {
 		++n;
 		if (n > 1)
 			n = 0;
+	}
+
+	public void BackPressed ()
+	{
+		creditsCanvas.sortingOrder = 0;
 	}
 
 
