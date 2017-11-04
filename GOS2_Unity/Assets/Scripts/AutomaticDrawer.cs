@@ -20,7 +20,7 @@ public class AutomaticDrawer : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 		if(movedObject != null && path.Count > 0)
         {
             moveObject();
