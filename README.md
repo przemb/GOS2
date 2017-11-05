@@ -11,7 +11,8 @@ Idea gry opiera się na naśladownictwie oraz wykorzystaniu atrakcyjnych dystrak
 
 ## Pobierz
 Gra cały czas jest w fazie rozwoju, ale jeśli mimo to chcesz ją pobrać,  **[*kliknij tutaj*](https://github.com/przemb/GOS2/releases/tag/v1.0-beta)**, **dzięki!** :heart:
-Aktualna wersja działa na platformach Android i Windows. 
+
+Aktualna wersja działa na platformach Android i Windows.
 
 
 ## Instalacja
