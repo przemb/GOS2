@@ -10,17 +10,31 @@ Idea gry opiera się na naśladownictwie oraz wykorzystaniu atrakcyjnych dystrak
 ***Czary Mary*** jest darmową i otwartą grą, która powstała podczas drugiej edycji wydarzenia [*Gra o Słoń*](https://psychogra.pl) i otrzymała **wyróżnienie**! :blush:
 
 ## Pobierz
-Gra cały czas jest w fazie rozwoju, ale jeśli mimo to chcesz ją pobrać,  **[*kliknij tutaj*](https://github.com/przemb/GOS2/releases/tag/v1.0-beta)**, **dzięki!** :heart:
+Aktualna wersja działa na platformach **Android** i **Windows**. 
+Gra cały czas jest w fazie rozwoju, jeśli mimo to chcesz ją pobrać, wybierz interesującą Cię wersję:
 
-Aktualna wersja działa na platformach Android i Windows.
+ - [wersja na telefon/ tablet - **Android**](https://github.com/przemb/GOS2/releases/download/v1.0-beta/CzaryMaryAndroid.apk)
+ - [wersja na komputer - **Windows**](https://github.com/przemb/GOS2/releases/download/v1.0-beta/CzaryMaryWindows.zip)
 
 
-## Instalacja
+## Instalacja 
+#### Instalacja na telefonie / tablecie 
 1. Pobierz grę :video_game:
-2. Rozpakuj paczkę *(zip)*) :package:
+2. Ponieważ gra nie jest jeszcze dostępna w sklepie [Google Play](https://play.google.com/store) 
+**zmień ustawienia w swoim telefonie:**
+Ustawienia -> Zabezpieczenia -> Nieznane źródła
+**zaznacz**: *Zezwalaj na instalację aplikacji ze źródeł innych niż sklep Play.*
+3. Otwórz plik *CzaryMaryAndroid.apk*
+4. Czaruj :zap:
+
+#### Instalacja na komputerze
+1. Pobierz grę:video_game:
+2. Rozpakuj zawartość *CzaryMaryWindows.zip*  :package: 
+    (potrzebujesz do tego programu np. *7zip* albo *WinRar*)
 3. Uruchom plik *.exe* :tophat:
 4. Wybierz z listy największą dostępną rozdzielczość
 5. Czaruj :zap:
+
 
 ## Screeny
 <img style="float: left; width: 20%; margin-right: 1%; margin-bottom: 0.5em;" src="https://raw.githubusercontent.com/przemb/GOS2/master/Game_Screenshots/1.png" /> 
