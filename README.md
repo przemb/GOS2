@@ -20,16 +20,16 @@ Gra cały czas jest w fazie rozwoju, jeśli mimo to chcesz ją pobrać, wybierz 
 ## Instalacja 
 #### Instalacja na telefonie / tablecie 
 1. Pobierz grę :video_game:
-2. Ponieważ gra nie jest jeszcze dostępna w sklepie [Google Play](https://play.google.com/store) 
-**zmień ustawienia w swoim telefonie:**
-Ustawienia -> Zabezpieczenia -> Nieznane źródła
+2. Ponieważ gra nie jest jeszcze dostępna w sklepie [Google Play](https://play.google.com/store)  
+**zmień ustawienia w swoim telefonie:**  
+Ustawienia -> Zabezpieczenia -> Nieznane źródła  
 **zaznacz**: *Zezwalaj na instalację aplikacji ze źródeł innych niż sklep Play.*
 3. Otwórz plik *CzaryMaryAndroid.apk*
 4. Czaruj :zap:
 
 #### Instalacja na komputerze
-1. Pobierz grę:video_game:
-2. Rozpakuj zawartość *CzaryMaryWindows.zip*  :package: 
+1. Pobierz grę :video_game:
+2. Rozpakuj zawartość *CzaryMaryWindows.zip*  :package:   
     (potrzebujesz do tego programu np. *7zip* albo *WinRar*)
 3. Uruchom plik *.exe* :tophat:
 4. Wybierz z listy największą dostępną rozdzielczość
