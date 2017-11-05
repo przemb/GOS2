@@ -10,7 +10,9 @@ Idea gry opiera się na naśladownictwie oraz wykorzystaniu atrakcyjnych dystrak
 ***Czary Mary*** jest darmową i otwartą grą, która powstała podczas drugiej edycji wydarzenia [*Gra o Słoń*](https://psychogra.pl) i otrzymała **wyróżnienie**! :blush:
 
 ## Pobierz
-Gra cały czas jest w fazie rozwoju, ale jeśli mimo to chcesz ją pobrać,  **[*kliknij tutaj*](https://github.com/przemb/GOS2/raw/master/Builds_List/CzaryMaryV1.zip)**, **dzięki!** :heart:
+Gra cały czas jest w fazie rozwoju, ale jeśli mimo to chcesz ją pobrać,  **[*kliknij tutaj*](https://github.com/przemb/GOS2/releases/tag/v1.0-beta)**, **dzięki!** :heart:
+Aktualna wersja działa na platformach Android i Windows. 
+
 
 ## Instalacja
 1. Pobierz grę :video_game:
