@@ -35,11 +35,11 @@ Ustawienia -> Zabezpieczenia -> Nieznane źródła
 4. Wybierz z listy największą dostępną rozdzielczość
 5. Czaruj :zap:
 
-
+https://github.com/przemb/GOS2/raw/new_rabbits/Game_Screenshots/1.png
 ## Screeny
-<img style="float: left; width: 20%; margin-right: 1%; margin-bottom: 0.5em;" src="https://raw.githubusercontent.com/przemb/GOS2/master/Game_Screenshots/1.png" /> 
-<img style="float: left; width: 20%; margin-right: 0%; margin-bottom: 0.5em;" src="https://raw.githubusercontent.com/przemb/GOS2/master/Game_Screenshots/3.png" />
-<img style="float: left; width: 20%; margin-right: 0%; margin-bottom: 0.5em;" src="https://raw.githubusercontent.com/przemb/GOS2/master/Game_Screenshots/4.png" />
+<img style="float: left; width: 20%; margin-right: 1%; margin-bottom: 0.5em;" src="https://raw.githubusercontent.com/przemb/GOS2/new_rabbits/Game_Screenshots/1.png" />
+<img style="float: left; width: 20%; margin-right: 0%; margin-bottom: 0.5em;" src="https://raw.githubusercontent.com/przemb/GOS2/new_rabbits/Game_Screenshots/3.png" />
+<img style="float: left; width: 20%; margin-right: 0%; margin-bottom: 0.5em;" src="https://raw.githubusercontent.com/przemb/GOS2/new_rabbits/Game_Screenshots/4.png" />
 
 ---
 <b id="f1">1</b> *lub myszki* :mouse: [↩](#a1) 
